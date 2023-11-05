@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/ligin.css">
+</head>
+<body>
+    <div class="container">  
+        <h2>Iniciar Sesión</h2>
+        <!-- Agrega un formulario con action y method -->
+        <form action="../PHP/login.php" method="POST">
+            <div class="form-group">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="correo" placeholder="Ingresa tu usuario">
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="contrasena" placeholder="Ingresa tu contraseña">
+            </div>
+            <div class="btn-container">
+                <button type="submit" class="btn">Ingresar</button> <!-- Cambia a type="submit" -->
+                <button type="button" class="btn btn-lipiar" id="limpiar-btn">Limpiar</button> <!-- Cambia a type="button" -->
+            </div>
+        </form> <!-- Cierra el formulario -->
+        <p class="forgot-password">¿Olvidaste tu contraseña?</p>
+        <p>¿No tienes una cuenta? <span id="crear-cuenta" class="forgot-password">Crear una cuenta</span></p>
+    </div>
+    <script src="../JS/login2.js"></script>
+    <script src="../JS/login.js"></script>
+</body>
+</html>
+

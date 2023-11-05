@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta</title>
+    <link rel="stylesheet" href="../CSS/Registro.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Crear Cuenta</h2>
+        <form action="../PHP/Registro.php" method="POST">
+            <!-- BORRAR DESPUES SI NO FUNCIONA -->
+            <div class="form-group">
+                <label for="id_usuario">Ingresa un Código de Usuario:</label>
+                <input type="text" id="id_usuario" name="id_usuario" placeholder="Sólo se aceptan números" required>
+            </div>
+            <div class="form-group">
+                <label for="nombre">Ingresa tu Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="apellido">Ingresa tus Apellidos:</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" required>
+            </div>
+            <div class="form-group">
+                <label for="genero">Género:</label>
+                <select id="genero" name="genero">
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" name="telefono" placeholder="Ingresa tu teléfono">
+            </div>
+            <div class="form-group">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo electrónico" required>
+            </div>
+            <div class="form-group">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña" required>
+            </div>
+           
+            <div class="form-group">
+                <label for="departamento">Departamento:</label>
+                <select id="departamento" name="departamento" onchange="cargarMunicipios()"> <!--ESTOY AGREGANDO CODIGO AQUI COMO PRUEBA-->
+                    <!-- Aquí puedes cargar dinámicamente los departamentos desde la base de datos si es necesario -->
+                    <option value="GUATEMALA">GUATEMALA</option>
+                    <option value="EL PROGRESO">EL PROGRESO</option>
+                    <option value="HUEHUETENANGO">HUEHUETENANGO</option>
+                    <option value="BAJA VERAPAZ">BAJA VERAPAZ</option>
+                    <option value="ALTA VERAPAZ">ALTA VERAPAZ</option>
+                    <option value="IZABAL">IZABAL</option>
+                    <option value="CHIQUIMULA">CHIQUIMULA</option>
+                    <option value="ZACAPA">ZACAPA</option>
+                    <option value="SANTA ROSA">SANTA ROSA</option>
+                    <option value="JALAPA">JALAPA</option>
+                    <option value="JUTIAPA">JUTIAPA</option>
+                    <option value="SACATEPÉQUEZ">SACATEPÉQUEZ</option>
+                    <option value="CHIMALTENANGO">CHIMALTENANGO</option>
+                    <option value="ESCUINTLA">ESCUINTLA</option>
+                    <option value="SOLOLÁ">SOLOLÁ</option>
+                    <option value="TOTONICAPÁN">TOTONICAPÁN</option>
+                    <option value="QUETZALTENANGO">QUETZALTENANGO</option>
+                    <option value="SUCHITEPÉQUEZ">SUCHITEPÉQUEZ</option>
+                    <option value="RETALHULEU">RETALHULEU</option>
+                    <option value="SAN MARCOS">SAN MARCOS</option>
+                    <option value="QUICHÉ">QUICHÉ</option>
+                    <option value="PETÉN">PETÉN</option>
+                    <!-- Agrega más opciones según tus necesidades -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="municipio">Municipio:</label>
+                <div id="municipio-container"></div><!--ESTOY AGREGANDO CODIGO AQUI COMO PRUEBA-->
+                <select id="municipio" name="municipio">
+                    <!-- Aquí se cargan dinámicamente los municipios según el departamento seleccionado si es necesario -->
+                    <option value="GUATEMALA">GUATEMALA</option>
+                    <option value="MIXCO">MIXCO</option>
+                    <option value="VILLA NUEVA">VILLA NUEVA</option>
+                    <option value="CHINAUTLA">CHINAUTLA</option>
+                    <option value="PALENCIA">PALENCIA</option>
+                    <option value="SAN CRISTOBAL">SAN CRISTOBAL</option>
+                    <option value="SAN PEDRO AYAMPUC">SAN PEDRO AYAMPUC</option>
+                    <option value="SAN PEDRO SACATEPEQUEZ">SAN PEDRO SACATEPEQUEZ</option>
+                    <option value="SAN JUAN SACATEPEQUEZ">SAN JUAN SACATEPEQUEZ</option>
+                    <option value="SAN RAYMUNDO">SAN RAYMUNDO</option>
+                    <option value="CHUARRANCHO">CHUARRANCHO</option>
+                    <option value="FRAIJANES">FRAIJANES</option>
+                    <option value="AMATITLÁN">AMATITLÁN</option>
+                     <!-- MUNICIPIOS DE EL PROGRESO -->
+                    <option value="SAN CRISTOBAL">SAN CRISTOBAL</option>
+                    <option value="GUASTATOYA">GUASTATOYA</option>
+                    <option value="EL JÍCARO">EL JÍCARO</option>
+                    <option value="SANSARE">SANSARE</option>
+                    <option value="SANARATE">SANARATE</option>
+                     <!-- MUNICIPIOS DE HUEHUE -->
+                    <option value="BARILLAS">BARILLAS</option>
+                    <option value="HUEHUETENANGO">HUEHUETENANGO</option>
+                    <option value="CHIANTLA">CHIANTLA</option>
+                    <option value="CUILCO">CUILCO</option>
+                    <option value="NENTÓN">NENTÓN</option>
+                    <!-- MUNICIPIOS DE BAJA VERAPAZ -->
+                    <option value="SALAMÁ">SALAMÁ</option>
+                    <option value="RABINAL">RABINAL</option>
+                    <option value="CUBULCO">CUBULCO</option>
+                    <!-- MUNICIPIOS DE ALTA VERAPAZ -->
+                    <option value="COBÁN">COBÁN</option>
+                    <option value="TACTÍC">TACTÍC</option>
+                    <option value="TAMAHÚ">TAMAHÚ</option>
+                    <!-- MUNICIPIOS DE IZABAL -->
+                    <option value="PUERTO BARRIOS">PUERTO BARRIOS</option>
+                    <option value="EL ESTOR">EL ESTOR</option>
+                    <option value="MORALES">MORALES</option>
+                    <!-- MUNICIPIOS DE CHIQUIMULA -->
+                    <option value="CHIQUIMULA">CHIQUIMULA</option>
+                    <option value="CAMOTÁN">CAMOTÁN</option>
+                    <option value="ESQUIPULAS">ESQUIPULAS</option>
+                    <!-- MUNICIPIOS DE ZACAPA -->
+                    <option value="ZACAPA">ZACAPA</option>
+                    <option value="RÍO HONDO">RÍO HONDO</option>
+                    <option value="GUALÁN">GUALÁN</option>
+                    <!-- MUNICIPIOS DE SANTA ROSA -->
+                    <option value="CUILAPA">CUILAPA</option>
+                    <option value="CHIQUIMULILLA">CHIQUIMULILLA</option>
+                    <!-- MUNICIPIOS DE JALAPA -->
+                    <option value="JALAPA">JALAPA</option>
+                    <option value="MONJAS">MONJAS</option>
+                    <!-- MUNICIPIOS DE JUTIAPA -->
+                    <option value="JUTIAPA">JUTIAPA</option>
+                    <option value="AGUA BLANCA">AGUA BLANCA</option>
+                    <option value="ASUNCIÓN MITA">ASUNCIÓN MITA</option>
+                    <!-- MUNICIPIOS DE SACATEPÉQUEZ -->
+                    <option value="ANTIGUA GUATEMALA">ANTIGUA GUATEMALA</option>
+                    <option value="JOCOTENANGO">JOCOTENANGO</option>
+                    <option value="SUMPANGO">SUMPANGO</option>
+                    <!-- MUNICIPIOS DE CHIMALTENANGO -->
+                    <option value="CHIMALTENANGO">CHIMALTENANGO</option>
+                    <option value="PATZÚN">PATZÚN</option>
+                    <option value="EL TEJAR">EL TEJAR</option>
+                    <!-- MUNICIPIOS DE ESCUINTLA -->
+                    <option value="ESCUINTLA">ESCUINTLA</option>
+                    <option value="LA DEMOCRACIA">LA DEMOCRACIA</option>
+                    <option value="SIQUINALÁ">SIQUINALÁ</option>
+                    <!-- MUNICIPIOS DE SOLOLÁ -->
+                    <option value="SOLOLÁ">SOLOLÁ</option>
+                    <option value="NAHUALÁ">NAHUALÁ</option>
+                    <option value="PANAJACHEL">PANAJACHEL</option>
+                    <!-- MUNICIPIOS DE TOTONICAPÁN -->
+                    <option value="TOTONICAPÁN">TOTONICAPÁN</option>
+                    <option value="MOMOSTENANGO">MOMOSTENANGO</option>
+                    <!-- MUNICIPIOS DE QUETZALTENANGO -->
+                    <option value="QUETZALTENANGO">QUETZALTENANGO</option>
+                    <option value="SALCAJÁ">SALCAJÁ</option>
+                    <option value="OLINTEPEQUE">OLINTEPEQUE</option>
+                    <!-- MUNICIPIOS DE SUCHITEPÉQUEZ -->
+                    <option value="MAZATENANGO">MAZATENANGO</option>
+                    <option value="CHICACAO">CHICACAO</option>
+                    <option value="PATULUL">PATULUL</option>
+                    <!-- MUNICIPIOS DE RETALHULEU -->
+                    <option value="RETALHUELU">RETALHUELU</option>
+                    <option value="CHAMPERICO">CHAMPERICO</option>
+                    <option value="EL ASINTAL">EL ASINTAL</option>
+                    <!-- MUNICIPIOS DE SAN MARCOS -->
+                    <option value="SAN MARCOS">SAN MARCOS</option>
+                    <option value="TACANÁ">TACANÁ</option>
+                    <option value="TAJUMULCO">TAJUMULCO</option>
+                    <!-- MUNICIPIOS DE QUICHÉ -->
+                    <option value="SANTA CRUZ DEL QUICHÉ">SANTA CRUZ DEL QUICHÉ</option>
+                    <option value="CHICHÉ">CHICHÉ</option>
+                    <option value="CHAJUL">CHAJUL</option>
+                    <!-- MUNICIPIOS DE PETÉN -->
+                    <option value="FLORES">FLORES</option>
+                    <option value="SAN JOSÉ">SAN JOSÉ</option>
+                    <option value="SAN BENITO">SAN BENITO</option>
+                   
+                </select>
+            </div>
+            <div class="btn-container">
+                <button type="submit" class="btn btn-create-account">Crear Cuenta</button>
+                <button class="btn btn-cancel" onclick="window.location.href='../Paginas/login.html'">Cancelar</button>
+            </div>
+        </form>
+    </div>
+	<script src="../JS/registrar_contactos.js"></script>
+
+</body>
+</html>
