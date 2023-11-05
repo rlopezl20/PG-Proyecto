@@ -1,0 +1,92 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Establece el mínimo alto de la ventana gráfica */
+    margin: 0;
+}
+
+
+.container {
+    flex-grow: 1; /* Permite que el contenido principal ocupe todo el espacio disponible */
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    text-align: center;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #f5f5f5;
+}
+
+.menu {
+    width: 600px;/*tamaño de menu contactos*/
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+.menu ul {
+    list-style-type: none; /* Quita los puntos de la lista */
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    display: inline; /* Muestra los elementos de la lista en línea */
+    margin-right: 40px; /* Agrega un espacio entre los elementos */
+}
+
+.menu ul li:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último elemento */
+}
+
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}

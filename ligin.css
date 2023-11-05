@@ -1,0 +1,17 @@
+/* Establece la imagen de fondo */
+body {
+    background-image: url('../IMG/discapacidad.jpg'); /* Reemplaza 'ruta-de-la-imagen.jpg' con la ruta de tu imagen */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    background-attachment: fixed; /* Mantiene la imagen de fondo fija mientras se desplaza la página */
+}
+
+/* Estilos para el contenedor del formulario */
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para hacer que el contenido sea legible */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 50px auto; /* Centra el contenedor verticalmente */
+    max-width: 400px; /* Establece un ancho máximo para el contenedor */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra al contenedor */
+}
